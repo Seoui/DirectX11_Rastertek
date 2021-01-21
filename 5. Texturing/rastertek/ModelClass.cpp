@@ -15,7 +15,7 @@ ModelClass::~ModelClass()
 {
 }
 
-bool ModelClass::Initialize(ID3D11Device * device, WCHAR* textureFilename)
+bool ModelClass::Initialize(ID3D11Device * device, const WCHAR* textureFilename)
 {
 	bool result;
 
@@ -164,7 +164,7 @@ void ModelClass::RenderBuffers(ID3D11DeviceContext * deviceContext)
 	return;
 }
 
-bool ModelClass::LoadTexture(ID3D11Device * device, WCHAR * fileName)
+bool ModelClass::LoadTexture(ID3D11Device * device, const WCHAR * fileName)
 {
 	bool result;
 

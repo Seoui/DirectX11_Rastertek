@@ -1,0 +1,46 @@
+// GLOBALS
+Texture2D shaderTexture;
+SamplerState SampleType;
+
+// 라이트 클래스로부터 넘어오는 상수버퍼
+cbuffer LightBuffer
+{
+	float4 diffuseColor;
+	float3 lightDirection;
+	float padding;
+};
+
+// TYPEDEFS
+struct PixelInputType
+{
+	float4 position : SV_POSITION;
+	float2 tex : TEXCOORD0;
+	float3 normal : NORMAL;
+};
+
+float4 LightPixelShader(PixelInputType input) : SV_TARGET
+{
+	float4 textureColor;
+	float3 lightDir;
+	float lightIntensity;
+	float4 color;
+
+	// Sample the pixel color from the texture using the sampler at this texture coordinate location.
+	textureColor = shaderTexture.Sample(SampleType, input.tex);
+
+	// Invert the light direction for calculations.
+	lightDir = -lightDirection;
+	// Calculate the amount of light on this pixel.
+	/* 아래 코드에서 노멀벡터와 빛벡터의 내적을 구하고 [0, 1] 구간으로 clamp하는건데
+	만약 노멀벡터와 빛벡터 사이의 각이 90도보다 크다면 내적값은 음수가 되므로
+	clamp한 결과는 0이 됨(90도이어도 0). 따라서 lightIntensity = 0이고, 빛을 아예 안받는게 된다.
+	각이 90도보다 작다면 clamp한 결과는 0보다 크게 된다. 
+	각이 작으면 작을 수록 clamp한 결과는 1에 가까워지고, 빛의 세기는 강해진다. */
+	lightIntensity = saturate(dot(input.normal, lightDir));
+	// Determine the final amount of diffuse color based on the diffuse color combined with the light intensity.
+	color = saturate(diffuseColor * lightIntensity);
+	// Multiply the texture pixel and the final diffuse color to get the final pixel color result.
+	color = color * textureColor;
+
+	return color;
+};
