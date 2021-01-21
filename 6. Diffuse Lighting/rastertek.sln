@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1321
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rastertek", "rastertek\rastertek.vcxproj", "{F78B8CC1-217C-414B-967E-E93D8476BF67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F78B8CC1-217C-414B-967E-E93D8476BF67}.Debug|x64.ActiveCfg = Debug|x64
+		{F78B8CC1-217C-414B-967E-E93D8476BF67}.Debug|x64.Build.0 = Debug|x64
+		{F78B8CC1-217C-414B-967E-E93D8476BF67}.Debug|x86.ActiveCfg = Debug|Win32
+		{F78B8CC1-217C-414B-967E-E93D8476BF67}.Debug|x86.Build.0 = Debug|Win32
+		{F78B8CC1-217C-414B-967E-E93D8476BF67}.Release|x64.ActiveCfg = Release|x64
+		{F78B8CC1-217C-414B-967E-E93D8476BF67}.Release|x64.Build.0 = Release|x64
+		{F78B8CC1-217C-414B-967E-E93D8476BF67}.Release|x86.ActiveCfg = Release|Win32
+		{F78B8CC1-217C-414B-967E-E93D8476BF67}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3356FA43-E8D6-4E88-A1AE-33A7B692ACF9}
+	EndGlobalSection
+EndGlobal

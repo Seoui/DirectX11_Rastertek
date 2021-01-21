@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SystemClass.cpp" />
+    <ClCompile Include="InputClass.cpp" />
+    <ClCompile Include="GraphicsClass.cpp" />
+    <ClCompile Include="D3DClass.cpp" />
+    <ClCompile Include="ModelClass.cpp" />
+    <ClCompile Include="CameraClass.cpp" />
+    <ClCompile Include="TextureShaderClass.cpp" />
+    <ClCompile Include="TextureClass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SystemClass.h" />
+    <ClInclude Include="InputClass.h" />
+    <ClInclude Include="GraphicsClass.h" />
+    <ClInclude Include="D3DClass.h" />
+    <ClInclude Include="ModelClass.h" />
+    <ClInclude Include="CameraClass.h" />
+    <ClInclude Include="TextureShaderClass.h" />
+    <ClInclude Include="TextureClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{66e34a08-6070-4d2c-b182-9117d64b2b39}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Texture.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Texture.ps">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
